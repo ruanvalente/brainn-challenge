@@ -49,6 +49,8 @@ function App() {
     },
   ];
 
+  useEffect(() => {}, [contests]);
+
   useEffect(() => {
     api
       .get(`/concursos/${selectedCompetition.contestsId}`)
@@ -97,10 +99,11 @@ function App() {
               <section className="box-subtitle">
                 <p>CONCURSO</p>
                 <span>
-                  {contests?.id} -
-                  {luxon.DateTime.fromISO(
-                    contests?.data ? contests.data : ""
-                  ).toFormat("dd/MM/yyyy")}
+                  {contests?.id} - {isLoading && "carregando...."}
+                  {!isLoading &&
+                    luxon.DateTime.fromISO(
+                      contests?.data ? contests.data : ""
+                    ).toFormat("dd/MM/yyyy")}
                 </span>
               </section>
             </div>
