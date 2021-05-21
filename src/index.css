@@ -1,0 +1,44 @@
+:root {
+  --background: #efefef;
+  --text-color: #333333;
+  --mega-sena: #6befa3;
+  --quina: #8666ef;
+  --loto-facil: #dd7ac6;
+  --loto-mania: #ffab64;
+  --time-mania: #5aad7d;
+  --dia-sorte: #bfaf83;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100vh;
+}
+body {
+  background: var(--background);
+  --webkit-font-smoothing: antialiased;
+}
+body,
+input,
+button {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+h2 {
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}

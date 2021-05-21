@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  overflow-y: hidden;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 88%;
+}
+
+.box-title {
+  display: flex;
+  align-items: center;
+}
+
+.box-title > span {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.box-subtitle > p {
+  margin-top: 122%;
+  font-size: 14px;
+  color: #fff;
+}
+
+.box-subtitle span {
+  font-size: 16px;
+  color: #fff;
+
+  font-weight: bold;
+}
+
+.box h2 {
+  margin-bottom: 80%;
+}
+
+.header {
+  position: relative;
+}
+
+.header__menu {
+  position: absolute;
+  top: 0;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 92px 60px;
+  display: grid;
+}
+
+.header__menu #competition {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.balls {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.ball {
+  padding: 20px;
+  background: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 64px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loading span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: var(--mega-sena);
+  margin: 4px;
+  animation: dots 0.6s cubic-bezier(0.6, 0.1, 1, 0.4) infinite alternate;
+}
+
+.loading span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.loading span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.loading span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dots {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 30px, 0);
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .container {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header svg {
+    width: 100vw;
+    height: 126vw;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
+  }
+
+  .box-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .box-title > span {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .box-subtitle > p {
+    margin-top: 38%;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .box-subtitle span {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .balls {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    position: unset;
+    bottom: 64px;
+    text-align: center;
+    margin: 10px;
+  }
+}
