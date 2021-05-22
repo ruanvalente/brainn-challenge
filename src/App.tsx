@@ -111,7 +111,7 @@ function App() {
         </section>
       </div>
 
-      <div className="balls">
+      <div className="balls" data-testid="balls">
         {!!isLoading && <Loading />}
         {contests?.numeros.map((contestNumber) => (
           <div key={contestNumber} className="ball">
