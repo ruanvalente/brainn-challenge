@@ -76,6 +76,7 @@ function App() {
     <div className="container">
       <div className="header">
         <SVGSidebar fill={selectedCompetition.fill} height="100vh" />
+
         <section className="header-menu">
           <select id="competition" onChange={handlerChangeSelectedCompetition}>
             <option value="2359">MEGA-SENA</option>
@@ -107,7 +108,7 @@ function App() {
       </div>
 
       <div className="balls" data-testid="balls">
-        {!!isLoading && <Loading />}
+        {!!isLoading && <Loading background={selectedCompetition.fill} />}
         {contests?.numeros.map((contestNumber) => (
           <div key={contestNumber} className="ball">
             {contestNumber}
