@@ -170,7 +170,7 @@
 
   .header svg {
     width: 100vw;
-    height: 80vh;
+    height: 60vh;
   }
 
   .box {
@@ -210,6 +210,10 @@
     font-weight: bold;
   }
 
+  .ball {
+    margin-bottom: 20px;
+  }
+
   .balls {
     display: flex;
     align-content: center;
@@ -222,6 +226,10 @@
     position: unset;
     bottom: 64px;
     text-align: center;
-    margin: 10px;
+    margin: 40px;
+  }
+
+  .footer p {
+    margin-top: 40px;
   }
 }
