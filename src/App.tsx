@@ -12,6 +12,7 @@ import Logo from "./assets/logo.png";
 
 import { Contests } from "./types/contests";
 import { ObjectColor } from "./types/objectColor";
+import { Lotteries } from "./types/lotteries";
 
 function App() {
   const [selectedCompetition, setSelectedCompetition] = useState({
@@ -19,37 +20,48 @@ function App() {
     contestsId: "2359",
   });
   const [contests, setContests] = useState<Contests | null | undefined>(null);
+  const [lotteries, setLotteries] = useState<Lotteries[]>([]);
   const [isLoading, setLoading] = useState(true);
   const objectColorChange: Array<ObjectColor> = [
     {
-      "2359": {
+      "0": {
         contestsId: "2359",
         fill: "#6befa3",
       },
-      "5534": {
+      "1": {
         contestsId: "5534",
         fill: "#8666ef",
       },
-      "2200": {
+      "2": {
         contestsId: "2200",
         fill: "#dd7ac6",
       },
-      "2167": {
+      "3": {
         contestsId: "2167",
         fill: "#ffab64",
       },
-      "1622": {
+      "4": {
         contestsId: "1622",
         fill: "#5aad7d",
       },
-      "440": {
+      "5": {
         contestsId: "440",
         fill: "#bfaf83",
       },
     },
   ];
 
-  useEffect(() => {}, [contests]);
+  useEffect(() => {
+    api
+      .get(`/loterias`)
+      .then((response) => {
+        setLotteries(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   useEffect(() => {
     api
@@ -79,17 +91,17 @@ function App() {
 
         <section className="header-menu">
           <select id="competition" onChange={handlerChangeSelectedCompetition}>
-            <option value="2359">MEGA-SENA</option>
-            <option value="5534">QUINA</option>
-            <option value="2200">LOTOFACIL</option>
-            <option value="2167">LOTOMANIA</option>
-            <option value="1622">TIMEMANIA</option>
-            <option value="440">DIA DE SORTE</option>
+            {lotteries.map((lotteries) => (
+              <option key={lotteries.id} value={lotteries.id}>
+                {isLoading && "Carregando...."}
+                {!isLoading && lotteries.nome.toUpperCase()}
+              </option>
+            ))}
           </select>
 
           <div className="box">
             <section className="box-title">
-              <img src={Logo} alt="Logo megasena" />
+              <img src={Logo} alt="Logo MEGASENA" />
               <span>MEGA-SENA</span>
             </section>
 
