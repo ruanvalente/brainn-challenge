@@ -3,6 +3,10 @@
   overflow-y: hidden;
 }
 
+.header {
+  height: 100vh;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -41,7 +45,7 @@
   position: relative;
 }
 
-.header__menu {
+.header-menu {
   position: absolute;
   top: 0;
   max-width: 960px;
@@ -50,7 +54,7 @@
   display: grid;
 }
 
-.header__menu #competition {
+.header-menu #competition {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -146,11 +150,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    height: auto;
+    overflow: hidden;
   }
 
   .header svg {
     width: 100vw;
-    height: 126vw;
+    height: 80vh;
   }
 
   .box {

@@ -76,37 +76,32 @@ function App() {
     <div className="container">
       <div className="header">
         <SVGSidebar fill={selectedCompetition.fill} height="100vh" />
-        <section className="header__menu">
-          <div>
-            <select
-              id="competition"
-              onChange={handlerChangeSelectedCompetition}
-            >
-              <option value="2359">MEGA-SENA</option>
-              <option value="5534">QUINA</option>
-              <option value="2200">LOTOFACIL</option>
-              <option value="2167">LOTOMANIA</option>
-              <option value="1622">TIMEMANIA</option>
-              <option value="440">DIA DE SORTE</option>
-            </select>
+        <section className="header-menu">
+          <select id="competition" onChange={handlerChangeSelectedCompetition}>
+            <option value="2359">MEGA-SENA</option>
+            <option value="5534">QUINA</option>
+            <option value="2200">LOTOFACIL</option>
+            <option value="2167">LOTOMANIA</option>
+            <option value="1622">TIMEMANIA</option>
+            <option value="440">DIA DE SORTE</option>
+          </select>
 
-            <div className="box">
-              <section className="box-title">
-                <img src={Logo} alt="Logo megasena" />
-                <span>MEGA-SENA</span>
-              </section>
+          <div className="box">
+            <section className="box-title">
+              <img src={Logo} alt="Logo megasena" />
+              <span>MEGA-SENA</span>
+            </section>
 
-              <section className="box-subtitle">
-                <p>CONCURSO</p>
-                <span>
-                  {contests?.id} - {isLoading && "carregando...."}
-                  {!isLoading &&
-                    luxon.DateTime.fromISO(
-                      contests?.data ? contests.data : ""
-                    ).toFormat("dd/MM/yyyy")}
-                </span>
-              </section>
-            </div>
+            <section className="box-subtitle">
+              <p>CONCURSO</p>
+              <span>
+                {contests?.id} - {isLoading && "carregando...."}
+                {!isLoading &&
+                  luxon.DateTime.fromISO(
+                    contests?.data ? contests.data : ""
+                  ).toFormat("dd/MM/yyyy")}
+              </span>
+            </section>
           </div>
         </section>
       </div>

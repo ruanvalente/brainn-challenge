@@ -7,8 +7,8 @@ export function SVGSidebar(props: React.SVGProps<SVGSVGElement>) {
   if (size.width <= 762) {
     return (
       <svg
-        width="524"
-        height="570"
+        width="100vw"
+        height="100vh"
         viewBox="0 0 524 570"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
