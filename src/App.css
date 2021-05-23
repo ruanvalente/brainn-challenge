@@ -10,7 +10,10 @@
 .box {
   display: flex;
   flex-direction: column;
-  margin-top: 88%;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
 }
 
 .box-title {
@@ -19,21 +22,22 @@
 }
 
 .box-title > span {
+  margin-left: 20px;
+
   color: #fff;
   font-weight: bold;
-  margin-left: 20px;
 }
 
 .box-subtitle > p {
   margin-top: 122%;
+
   font-size: 14px;
   color: #fff;
 }
 
 .box-subtitle span {
-  font-size: 16px;
   color: #fff;
-
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -46,12 +50,14 @@
 }
 
 .header-menu {
+  display: grid;
+
   position: absolute;
   top: 0;
+
   max-width: 960px;
   margin: 0 auto;
-  padding: 92px 60px;
-  display: grid;
+  padding: 60px;
 }
 
 .header-menu #competition {
@@ -61,6 +67,7 @@
   align-items: center;
 
   padding: 0.5rem 1rem;
+
   border-radius: 5px;
   border: none;
 }
@@ -69,18 +76,20 @@
   display: flex;
   align-content: center;
   justify-content: center;
-
   flex-wrap: wrap;
+
   width: 100vw;
+  height: 100vh;
 }
 
 .ball {
   padding: 20px;
-  background: #fff;
-  border-radius: 50%;
-  font-weight: bold;
   margin-left: 20px;
-  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  font-weight: bold;
+  background: #fff;
 }
 
 .footer {
@@ -102,16 +111,20 @@
 .loading {
   display: flex;
   align-items: center;
+
   margin-top: 20px;
 }
 
 .loading span {
   display: inline-block;
+  margin: 4px;
   width: 10px;
   height: 10px;
+
   border-radius: 10px;
+
   background: var(--mega-sena);
-  margin: 4px;
+
   animation: dots 0.6s cubic-bezier(0.6, 0.1, 1, 0.4) infinite alternate;
 }
 
@@ -163,6 +176,8 @@
   .box {
     display: flex;
     flex-direction: column;
+    height: inherit;
+
     margin-top: 40%;
   }
 
@@ -179,19 +194,20 @@
 
   .box-subtitle > p {
     margin-top: 38%;
+
     font-size: 14px;
     color: #fff;
     text-align: center;
   }
 
   .box-subtitle span {
-    font-size: 16px;
-    color: #fff;
-    font-weight: bold;
-    /* text-align: center; */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
   }
 
   .balls {
@@ -199,6 +215,7 @@
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    height: inherit;
   }
 
   .footer {
