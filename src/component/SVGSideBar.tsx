@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useWindowSize } from "../hooks/useWindowSize";
 
 export function SVGSidebar(props: React.SVGProps<SVGSVGElement>) {
