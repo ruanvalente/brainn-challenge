@@ -3,7 +3,8 @@ import { screen, render } from "@testing-library/react";
 
 import { Loading } from "../component/Loading";
 
-const renderComponent = () => render(<Loading />);
+const backgroundMock = "";
+const renderComponent = () => render(<Loading background={backgroundMock} />);
 
 describe("Component: Loading", () => {
   describe("Display element", () => {
