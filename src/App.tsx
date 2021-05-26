@@ -18,6 +18,7 @@ function App() {
   const [selectedCompetition, setSelectedCompetition] = useState({
     fill: "#6befa3",
     contestsId: "2359",
+    name: "mega-sena",
   });
   const [contests, setContests] = useState<Contests | null | undefined>(null);
   const [lotteries, setLotteries] = useState<Lotteries[]>([]);
@@ -27,26 +28,32 @@ function App() {
       "0": {
         contestsId: "2359",
         fill: "#6befa3",
+        name: "mega-sena",
       },
       "1": {
         contestsId: "5534",
         fill: "#8666ef",
+        name: "quina",
       },
       "2": {
         contestsId: "2200",
         fill: "#dd7ac6",
+        name: "lotofácil",
       },
       "3": {
         contestsId: "2167",
         fill: "#ffab64",
+        name: "lotomania",
       },
       "4": {
         contestsId: "1622",
         fill: "#5aad7d",
+        name: "timemania",
       },
       "5": {
         contestsId: "440",
         fill: "#bfaf83",
+        name: "dia de sorte",
       },
     },
   ];
@@ -82,6 +89,7 @@ function App() {
     });
     setContests(null);
     setLoading(true);
+    console.log(selectedCompetition);
   }
 
   return (
@@ -102,7 +110,10 @@ function App() {
           <div className="box">
             <section className="box-title">
               <img src={Logo} alt="Logo MEGASENA" />
-              <span>MEGA-SENA</span>
+              <span>
+                {isLoading && "carregando...."}
+                {!isLoading && selectedCompetition.name.toUpperCase()}
+              </span>
             </section>
 
             <section className="box-subtitle">
