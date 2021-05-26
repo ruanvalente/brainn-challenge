@@ -164,8 +164,7 @@
     align-items: center;
     justify-content: center;
 
-    height: auto;
-    overflow: hidden;
+    height: 100%;
   }
 
   .header svg {
@@ -224,9 +223,8 @@
 
   .footer {
     position: unset;
-    bottom: 64px;
     text-align: center;
-    margin: 40px;
+    margin: 0px;
   }
 
   .footer p {
